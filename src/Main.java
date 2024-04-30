@@ -1,34 +1,41 @@
 public class Main {
-    public static <INT> void main(String[] args) {
+    public static void main(String[] args) {
+
 int clientOS = 1;
 if (clientOS == 1) {
     System.out.println("Установите версию приложения для Android по ссылке");
 } else if (clientOS == 0) {
     System.out.println("Установите версию приложения для iOS по ссылке");
 }
-int clientOS2 = 1;
 int clientDeviceYear = 2015;
-if (clientOS2 == 0 && clientDeviceYear < 2015) {
+if (clientOS == 0 && clientDeviceYear < 2015) {
     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-} else if (clientOS2 == 0 && clientDeviceYear >= 2015) {
+} else if (clientOS == 0 && clientDeviceYear >= 2015) {
     System.out.println("Установите версию приложения для iOS по ссылке");
-} else if (clientOS2 == 1 && clientDeviceYear < 2015) {
+} else if (clientOS == 1 && clientDeviceYear < 2015) {
     System.out.println("Установите облегченную версию приложения для Android по ссылке");
-} else if (clientOS2 == 1 && clientDeviceYear >= 2015) {
+} else if (clientOS == 1 && clientDeviceYear >= 2015) {
     System.out.println("Установите версию приложения для Android по ссылке");
 }
-int year = 1981;
-if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-    System.out.println( year + " год является високосным");
+int year = 1881;
+if (year < 1584){
+    System.out.println("Данный год не подходит под критерии определения високосного года.");
 } else {
-    System.out.println( year + " год не является високосным");
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+        System.out.println(year + " год является високосным");
+    } else {
+        System.out.println(year + " год не является високосным");
+    }
 }
 
 int deliveryDistance = 95;
-int days = 1;
+int days = 0;
 if (deliveryDistance > 100) {
     System.out.println("Доставки нет");
 } else {
+    if (deliveryDistance >= 0) {
+        days++;
+    }
     if (deliveryDistance > 20) {
         days++;
     }
